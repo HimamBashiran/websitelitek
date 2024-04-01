@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Seberapa Penting Domain Knowledge dalam Data Science?</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../index.css"></head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+    <div id="background_overlay"></div>
+    <div id="background" style="background: url(top_image.webp) center;"></div>
+    <table id="profile_blog">
+      <tbody>
+        <tr>
+          <td style="width:8vw;"><div id="profile_img_blog"></div></td>
+          <td style="width:52vw;">
+            <div id="username_blog"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="blog-display">
+      <h1 id="blog_title">Seberapa Penting Domain Knowledge dalam Data Science?</h1>
+      <h2 id="blog_sub_title">#datadrivenleardership</h2>
+      <div id="blog"><p id="para_0_original">
+
+<br>Domain knowledge dalam data science sangat penting karena memungkinkan para praktisi untuk memahami konteks di mana data tersebut dihasilkan, serta makna di balik pola-pola yang terdeteksi. Berikut adalah beberapa alasan mengapa domain knowledge sangat penting:</br>
+
+<br> 1. Memahami Konteks Bisnis: Domain knowledge membantu para praktisi data science untuk memahami konteks bisnis di mana data tersebut dihasilkan. Ini membantu dalam menentukan pertanyaan yang relevan untuk ditanyakan kepada data, serta membantu dalam menginterpretasikan hasil analisis dalam konteks bisnis yang tepat. Contoh: Seorang data scientist yang memahami industri pertanian dapat mengetahui bahwa faktor-faktor seperti curah hujan dan suhu udara dapat mempengaruhi hasil panen. Ini memungkinkan mereka untuk menyesuaikan model analisis dengan konteks pertanian yang sesuai.</br>
+
+<br> 2. Menentukan Fitur yang Relevan: Dalam proses pembangunan model, pengetahuan domain membantu dalam menentukan fitur-fitur yang paling relevan untuk dimasukkan ke dalam model. Ini mengarah pada pembangunan model yang lebih akurat dan efektif. Contoh: Seorang data scientist dalam industri pertanian mungkin mengetahui bahwa ketinggian tempat memiliki dampak signifikan pada jenis tanaman yang dapat tumbuh di suatu wilayah, sehingga memilihnya sebagai fitur penting dalam model prediksi hasil panen.</br>
+
+<br> 3. Interpretasi yang Lebih Baik: Memahami domain membantu dalam interpretasi hasil analisis data. Para praktisi dengan pengetahuan domain yang kuat dapat mengenali pola-pola yang mungkin tidak jelas bagi orang lain, serta memberikan konteks yang diperlukan untuk menginterpretasikan hasil secara tepat. Contoh: Seorang data scientist dengan pengetahuan tentang siklus pertumbuhan tanaman dapat lebih mudah menginterpretasikan pola peningkatan atau penurunan hasil panen dalam konteks musim tanam yang berbeda.</br>
+
+<br> 4. Mengidentifikasi Anomali atau Kesalahan: Dengan pengetahuan tentang domain, praktisi dapat dengan cepat mengidentifikasi anomali atau kesalahan dalam data yang mungkin tidak cocok dengan pola yang diharapkan. Contoh: Seorang data scientist yang mengerti tentang prinsip-prinsip pertanian dapat dengan cepat mengenali anomali dalam data cuaca yang tidak sesuai dengan musim tanam tertentu, yang dapat menunjukkan kesalahan dalam pengukuran atau pencatatan data.</br>
+
+<br> 5. Membangun Hubungan dengan Stakeholder: Kemampuan untuk berbicara dalam bahasa yang dimengerti oleh pemangku kepentingan bisnis sangat penting. Dengan memiliki pengetahuan domain yang kuat, para praktisi dapat berkomunikasi secara efektif dengan pemangku kepentingan bisnis dan membangun hubungan yang kuat. Contoh: Seorang data scientist yang memiliki pengetahuan tentang teknologi pertanian dapat lebih mudah berinteraksi dengan petani dan produsen pupuk, memfasilitasi kolaborasi untuk meningkatkan efisiensi pertanian menggunakan solusi data-driven.</br>
+
+<br> Secara keseluruhan, domain knowledge memainkan peran kunci dalam setiap tahap dari proses data science, mulai dari pemahaman masalah hingga interpretasi hasil analisis. Tanpa pengetahuan yang cukup tentang domain yang relevan, analisis data dapat menjadi kurang efektif dan hasilnya mungkin tidak bermanfaat secara maksimal bagi organisasi.</br></p></div>
+    </div>
+    <div id="footer_blog">
+      <a href="https://github.com/imfunniee" target="_blank">made on earth by a human</a>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("../../config.json", function(user) {
+        var icon = document.createElement("link");
+        icon.setAttribute("rel", "icon");
+        icon.setAttribute("href", user[0].userimg);
+        icon.setAttribute("type", "image/png");
+        document.getElementsByTagName("head")[0].appendChild(icon);
+        document.getElementById(
+          "profile_img_blog"
+        ).style.background = `url('${user[0].userimg}') center center`;
+        document.getElementById(
+          "username_blog"
+        ).innerHTML = `<span style="display:${
+          user[0].name == null || !user[0].name ? "none" : "block"
+        };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+        if ((user[0].theme = "dark.css")) {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+        } else {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+        }
+      });
+    </script>
+  
+
+</body></html>

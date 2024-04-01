@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Apa itu Data Literacy dan Mengapa Penting?</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../index.css"></head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+    <div id="background_overlay"></div>
+    <div id="background" style="background: url(top_image.png) center;"></div>
+    <table id="profile_blog">
+      <tbody>
+        <tr>
+          <td style="width:8vw;"><div id="profile_img_blog"></div></td>
+          <td style="width:52vw;">
+            <div id="username_blog"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="blog-display">
+      <h1 id="blog_title">Apa itu Data Literacy dan Mengapa Penting?</h1>
+      <h2 id="blog_sub_title">#datadrivenleadership</h2>
+      <div id="blog"><p id="para_0_original"><br>Data literasi mengacu pada kemampuan seseorang untuk memahami, menganalisis, menafsirkan, dan menggunakan data secara efektif. Ini mencakup pemahaman tentang konsep dasar data, seperti jenis-jenis data, teknik pengumpulan data, analisis data, dan interpretasi hasil. Kemampuan ini juga melibatkan keahlian dalam menggunakan alat dan teknologi terkait data, seperti spreadsheet, bahasa pemrograman, dan platform analisis data.</br>
+
+<br> Pentingnya data literasi dalam bidang data science sangatlah besar. Berikut adalah beberapa alasan mengapa data literasi penting dalam data science:</br>
+
+<br><b> 1. Memahami Data:</b> Data literasi membantu dalam memahami sifat dan karakteristik data yang digunakan dalam analisis. Ini termasuk pemahaman tentang jenis data apa yang relevan untuk pertanyaan atau masalah yang sedang dihadapi.</br>
+
+<br><b> 2. Analisis yang Efektif:</b> Dengan data literasi yang baik, seseorang dapat menerapkan metode analisis yang tepat untuk menjawab pertanyaan yang relevan. Ini termasuk kemampuan untuk memilih dan menerapkan teknik analisis statistik yang sesuai, seperti regresi, clustering, atau analisis prediktif.</br>
+
+<br><b> 3. Menghindari Bias:</b> Data literasi membantu mengidentifikasi dan mengurangi bias dalam analisis data. Ini termasuk pemahaman tentang sumber bias yang mungkin ada dalam data, serta teknik untuk mengatasi atau menguranginya.</br>
+
+<br><b> 4. Interpretasi yang Akurat:</b> Sebagian besar dari pekerjaan dalam data science melibatkan interpretasi hasil analisis data. Data literasi memungkinkan seseorang untuk menginterpretasikan hasil analisis dengan benar dan membuat kesimpulan yang tepat.</br>
+
+<br><b> 5. Kesadaran Etika:</b> Data literasi juga mencakup kesadaran tentang masalah etika dan privasi yang terkait dengan penggunaan data. Ini termasuk pemahaman tentang regulasi yang relevan, seperti GDPR, dan kewajiban untuk menghormati privasi individu dalam penggunaan data.</br>
+
+<br><b> 6. Komunikasi yang Efektif:</b> Terakhir, data literasi memungkinkan seseorang untuk berkomunikasi secara efektif tentang data dan hasil analisisnya. Kemampuan untuk menyajikan temuan secara jelas dan mudah dimengerti kepada pemangku kepentingan non-teknis juga sangat penting dalam lingkungan bisnis.</br>
+
+<br> Dalam dunia yang semakin didorong oleh data, kemampuan untuk memahami, menganalisis, dan menggunakan data dengan efektif menjadi keterampilan yang sangat berharga, tidak hanya dalam konteks data science tetapi juga dalam berbagai disiplin ilmu dan profesi. Oleh karena itu, investasi dalam pengembangan data literasi sangatlah penting.</br></p></div>
+    </div>
+    <div id="footer_blog">
+      <a href="https://github.com/imfunniee" target="_blank">made on earth by a human</a>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("../../config.json", function(user) {
+        var icon = document.createElement("link");
+        icon.setAttribute("rel", "icon");
+        icon.setAttribute("href", user[0].userimg);
+        icon.setAttribute("type", "image/png");
+        document.getElementsByTagName("head")[0].appendChild(icon);
+        document.getElementById(
+          "profile_img_blog"
+        ).style.background = `url('${user[0].userimg}') center center`;
+        document.getElementById(
+          "username_blog"
+        ).innerHTML = `<span style="display:${
+          user[0].name == null || !user[0].name ? "none" : "block"
+        };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+        if ((user[0].theme = "dark.css")) {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+        } else {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+        }
+      });
+    </script>
+  
+
+</body></html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Data Analyst</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../index.css"></head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+    <div id="background_overlay"></div>
+    <div id="background" style="background: url(top_image.jpeg) center;"></div>
+    <table id="profile_blog">
+      <tbody>
+        <tr>
+          <td style="width:8vw;"><div id="profile_img_blog"></div></td>
+          <td style="width:52vw;">
+            <div id="username_blog"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="blog-display">
+      <h1 id="blog_title">Data Analyst</h1>
+      <h2 id="blog_sub_title">#datascience </h2>
+      <div id="blog"><p id="para_1_original"><br><b>Data Analyst</b></br>
+
+<br><b>Pengertian</b></br>
+<br>Seorang data analyst adalah seorang profesional yang bertanggung jawab untuk menganalisis data, menginterpretasikan hasil analisis tersebut, dan menggunakan wawasan tersebut untuk membantu pengambilan keputusan bisnis. Mereka bekerja dengan berbagai jenis data, mulai dari data pelanggan dan penjualan hingga data operasional dan keuangan.</br>
+
+<br><b>Tujuan</b></br>
+<br>Tujuan utama seorang data analyst adalah untuk mengubah data mentah menjadi informasi yang dapat dipahami dan digunakan untuk membuat keputusan yang lebih baik dalam bisnis. Mereka mencoba untuk menemukan pola, tren, dan wawasan yang dapat membantu organisasi meningkatkan efisiensi, produktivitas, dan keuntungan.</br>
+
+<br><b>Skill dan Keterampilan</b></br>
+<br> - <b>Analisis Data:</b> Kemampuan untuk menganalisis data secara sistematis dan mengidentifikasi pola, tren, dan hubungan yang relevan.</br>
+<br> - <b>Pemahaman Bisnis:</b> Kemampuan untuk memahami kebutuhan bisnis dan mengaitkan analisis data dengan tujuan bisnis yang spesifik.</br>
+<br> - <b>Keterampilan Komunikasi:</b> Kemampuan untuk mengkomunikasikan hasil analisis secara jelas dan efektif kepada pemangku kepentingan yang mungkin tidak memiliki latar belakang teknis.</br>
+<br> - <b>Pemrograman:</b> Pengetahuan tentang bahasa pemrograman seperti Python, R, SQL, atau bahasa pemrograman lainnya untuk melakukan manipulasi dan analisis data.</br>
+<br> - <b>Keterampilan Statistik:</b> Pemahaman yang kuat tentang konsep statistik dan teknik analisis statistik.</br>
+<br> - <b>Keterampilan Visualisasi Data:</b> Kemampuan untuk membuat visualisasi data yang informatif dan mudah dimengerti, seperti grafik, diagram, dan dashboard.</br>
+
+<br><b>Tools yang Digunakan</b></br>
+<br> - <b>Python:</b> Python adalah bahasa pemrograman yang populer digunakan untuk analisis data, dengan pustaka seperti Pandas, NumPy, dan Matplotlib.</br>
+<br> - <b>R:</b> R adalah bahasa pemrograman lain yang sering digunakan untuk analisis statistik dan visualisasi data.</br>
+<br> - <b>SQL:</b> SQL (Structured Query Language) digunakan untuk mengambil, memanipulasi, dan mengelola data dalam basis data relasional.</br>
+<br> - <b>Excel:</b> Meskipun sederhana, Excel tetap menjadi alat yang sangat berguna untuk analisis data dasar dan visualisasi.</br>
+
+<br><b>Rentang Gaji</b></br>
+<br>Rentang gaji seorang data analyst bervariasi tergantung pada faktor-faktor seperti pengalaman, lokasi geografis, industri, dan ukuran perusahaan. Namun, secara umum, gaji seorang data analyst bisa berkisar antara $50.000 hingga $120.000 atau lebih per tahun, tergantung pada faktor-faktor tersebut. Gaji dapat juga dipengaruhi oleh tingkat pendidikan dan sertifikasi yang dimiliki oleh seorang data analyst.</br></p></div>
+    </div>
+    <div id="footer_blog">
+      <a href="https://github.com/imfunniee" target="_blank">made on earth by a human</a>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("../../config.json", function(user) {
+        var icon = document.createElement("link");
+        icon.setAttribute("rel", "icon");
+        icon.setAttribute("href", user[0].userimg);
+        icon.setAttribute("type", "image/png");
+        document.getElementsByTagName("head")[0].appendChild(icon);
+        document.getElementById(
+          "profile_img_blog"
+        ).style.background = `url('${user[0].userimg}') center center`;
+        document.getElementById(
+          "username_blog"
+        ).innerHTML = `<span style="display:${
+          user[0].name == null || !user[0].name ? "none" : "block"
+        };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+        if ((user[0].theme = "dark.css")) {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+        } else {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+        }
+      });
+    </script>
+  
+
+</body></html>

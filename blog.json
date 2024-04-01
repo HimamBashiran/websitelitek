@@ -1,0 +1,44 @@
+[
+ {
+  "url_title": "Data-Analyst",
+  "title": "Data Analyst",
+  "sub_title": "#datascience ",
+  "top_image": "top_image.jpeg",
+  "visible": true
+ },
+ {
+  "url_title": "Data-Engineer",
+  "title": "Data Engineer",
+  "sub_title": "#datascience",
+  "top_image": "top_image.jpeg",
+  "visible": true
+ },
+ {
+  "url_title": "Underfitting-vs-Overfitting",
+  "title": "Underfitting vs Overfitting",
+  "sub_title": "#machinelearniing",
+  "top_image": "top_image.png",
+  "visible": true
+ },
+ {
+  "url_title": "Supervised-vs-Unsupervised-vs-Reinforcement-Learning",
+  "title": "Supervised vs Unsupervised vs Reinforcement Learning",
+  "sub_title": "#machinelearning",
+  "top_image": "top_image.webp",
+  "visible": true
+ },
+ {
+  "url_title": "Seberapa-Penting-Domain-Knowledge-dalam-Data-Science",
+  "title": "Seberapa Penting Domain Knowledge dalam Data Science?",
+  "sub_title": "#datadrivenleardership",
+  "top_image": "top_image.webp",
+  "visible": true
+ },
+ {
+  "url_title": "Apa-itu-Data-Literacy-dan-Mengapa-Penting",
+  "title": "Apa itu Data Literacy dan Mengapa Penting?",
+  "sub_title": "#datadrivenleadership",
+  "top_image": "top_image.png",
+  "visible": true
+ }
+]

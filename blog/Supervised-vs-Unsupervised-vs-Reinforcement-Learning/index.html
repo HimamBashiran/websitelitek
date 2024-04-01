@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Supervised vs Unsupervised vs Reinforcement Learning</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../index.css"></head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+    <div id="background_overlay"></div>
+    <div id="background" style="background: url(top_image.webp) center;"></div>
+    <table id="profile_blog">
+      <tbody>
+        <tr>
+          <td style="width:8vw;"><div id="profile_img_blog"></div></td>
+          <td style="width:52vw;">
+            <div id="username_blog"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="blog-display">
+      <h1 id="blog_title">Supervised vs Unsupervised vs Reinforcement Learning</h1>
+      <h2 id="blog_sub_title">#machinelearning</h2>
+      <div id="blog"><p id="para_0_original"><br><b>Supervised Learning</b></br>
+
+<br> Supervised learning adalah jenis pembelajaran di mana model belajar dari data yang telah dilabeli. Ini berarti setiap contoh data input telah ditandai dengan output yang benar. Tujuannya adalah untuk mempelajari hubungan antara input dan output dan kemudian dapat memprediksi output baru untuk input yang belum pernah dilihat sebelumnya. Tujuan utama dari supervised learning adalah untuk mempelajari fungsi pemetaan dari input ke output, sehingga model dapat melakukan prediksi yang akurat pada data baru. Beberapa jenis algoritma supervised learning termasuk Regresi Linier, Regresi Logistik, K-Nearest Neighbors, Support Vector Machines, Decision Trees, dan Neural Networks. Contoh penggunaan supervised learning dalam aplikasi sehari-hari termasuk: Prediksi harga saham,, klasifikasi email spam, pengenalan wajah untuk deteksi orang dalam gambar.</br>
+
+<br><b>Unsupervised Learning</b></br>
+<br> Unsupervised learning adalah jenis pembelajaran di mana model mempelajari struktur data tanpa adanya label. Model diharapkan dapat menemukan pola atau struktur yang bermanfaat dalam data tersebut. Tujuan utama dari unsupervised learning adalah untuk mengeksplorasi data, menemukan pola tersembunyi, dan memahami struktur intrinsik dari data tersebut. Beberapa jenis algoritma unsupervised learning termasuk K-Means Clustering, Hierarchical Clustering, Principal Component Analysis (PCA), dan Association Rule Learning. Contoh penggunaan unsupervised learning dalam aplikasi sehari-hari termasuk: Segmentasi pelanggan berdasarkan perilaku pembelian, pengelompokan berita berdasarkan topik, reduksi dimensi untuk visualisasi data kompleks.</br>
+
+<br><b>Reinforcement Learning</b></br>
+<br>Reinforcement learning adalah jenis pembelajaran di mana agen belajar untuk mengambil tindakan dalam lingkungan tertentu untuk mencapai tujuan tertentu. Agar agen tahu tindakan mana yang harus diambil, lingkungan memberikan umpan balik positif atau negatif dalam bentuk hadiah atau hukuman. Tujuan utama dari reinforcement learning adalah untuk mengembangkan kebijakan (policy) yang optimal, yaitu serangkaian tindakan yang memaksimalkan total hadiah yang diperoleh oleh agen dari lingkungan. Beberapa jenis pendekatan reinforcement learning meliputi Q-learning, Deep Q-Networks (DQN), Actor-Critic, dan Policy Gradient methods. Contoh penggunaan reinforcement learning dalam aplikasi sehari-hari termasuk: Pengendalian otomatis dalam robotika, pengoptimalan strategi perdagangan saham, pengendalian permainan video.</br>
+
+<br><b>Perbedaan</b></br>
+
+<br> - Supervised Learning: Memerlukan data yang dilabeli (input-output pairs) untuk melatih model.</br>
+<br> - Unsupervised Learning: Tidak memerlukan label pada data; model mencoba untuk menemukan pola atau struktur yang tersembunyi dalam data.</br>
+<br> - Reinforcement Learning: Agar agen bisa belajar, ia berinteraksi dengan lingkungan dan menerima umpan balik dalam bentuk hadiah atau hukuman; tujuannya adalah untuk memaksimalkan total hadiah yang diterima agen dari lingkungan.</br></p></div>
+    </div>
+    <div id="footer_blog">
+      <a href="https://github.com/imfunniee" target="_blank">made on earth by a human</a>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("../../config.json", function(user) {
+        var icon = document.createElement("link");
+        icon.setAttribute("rel", "icon");
+        icon.setAttribute("href", user[0].userimg);
+        icon.setAttribute("type", "image/png");
+        document.getElementsByTagName("head")[0].appendChild(icon);
+        document.getElementById(
+          "profile_img_blog"
+        ).style.background = `url('${user[0].userimg}') center center`;
+        document.getElementById(
+          "username_blog"
+        ).innerHTML = `<span style="display:${
+          user[0].name == null || !user[0].name ? "none" : "block"
+        };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+        if ((user[0].theme = "dark.css")) {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+        } else {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+        }
+      });
+    </script>
+  
+
+</body></html>
